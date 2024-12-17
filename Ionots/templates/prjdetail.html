@@ -26,4 +26,40 @@
                 40%
             </div>
         </div>
+        
+       {% comment %} tasks {% endcomment %}
+      
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Task 3: Model Training
+                        </button>
+                    </h5>
+                </div>
+                {% for task in project %}{% endfor %}
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group mt-3">
+                                <label for="status3">Select Task Status</label>
+                                <select class="form-control" id="status3" name="status">
+                                    <option value="pending">Pending</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="accepted">Accepted</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success mt-3">Save Status</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    
 {% endblock content %}

@@ -1,8 +1,8 @@
 from django.urls import path, include
-from assignment.views import index
+from assignment.views import index, projectDetail
 
 urlpatterns = [
     path('', index, name="index"),
-    path('project/<id>', index, name="ProjectDetail"),
+    path('project/<id>', projectDetail, name="ProjectDetail"),
 
 ]

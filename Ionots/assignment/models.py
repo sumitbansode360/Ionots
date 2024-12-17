@@ -7,6 +7,7 @@ from userauths.models import User  # Assuming User is defined here
 STATUS_CHOICES = (
     ("pending", "Pending"),
     ("completed", "Completed"),
+    ("accepted", "Accepted"),
 )
 
 class Project(models.Model):
