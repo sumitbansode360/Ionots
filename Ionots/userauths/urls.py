@@ -1,7 +1,9 @@
 from django.urls import path, include
-from assignment.views import index
+from userauths.views import RegisterView, Loginview, LogOutView
 
 urlpatterns = [
-    path('', index, name="index"),
+    path('register/', RegisterView, name="RegisterView"),
+    path('login/', Loginview, name="Loginview"),
+    path('logout/', LogOutView, name="LogOutView"),
 
 ]

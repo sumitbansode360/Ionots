@@ -52,13 +52,13 @@ def Loginview(request):
 
         if not email or not password:
             messages.error(request, "Both email and password are required!")
-            return redirect('sign-in')
+            return redirect('Loginview')
 
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
             messages.error(request, "User with this email does not exist!")
-            return redirect('sign-in')
+            return redirect('Loginview')
 
         user_auth = authenticate(request, email=email, password=password)
         if user_auth is not None:
@@ -68,7 +68,7 @@ def Loginview(request):
             return redirect(next_url)
         else:
             messages.error(request, "Invalid email or password!")
-            return redirect('sign-in')
+            return redirect('Loginview')
 
     return render(request, 'auth/sign-in.html')
 
@@ -76,4 +76,4 @@ def Loginview(request):
 def LogOutView(request):
     logout(request)
     messages.success(request,"You are log out!")
-    return redirect('sign-in')
+    return redirect('Loginview')

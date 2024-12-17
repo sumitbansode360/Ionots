@@ -1,9 +1,14 @@
 {% extends "partial/base.html" %}
 {% load static %}
+{% block title %}Ionots|Home{% endblock title %}
 {% block content %}
 <div class="d-flex mt-4 justify-content-end mx-4">
-    <button class="btn btn-warning mx-4 ">signup</button>
-    <button class="btn btn-warning">login</button>
+    {% if request.user.is_authenticated %}
+        <a href="{% url "LogOutView" %}"><button class="btn btn-warning">Log out</button></a>
+    {% else %}
+        <a href="{% url "RegisterView" %}"><button class="btn btn-warning mx-4 ">Register</button></a>
+        <a href="{% url "Loginview" %}"><button class="btn btn-warning">Log in</button></a>
+    {% endif %}
 </div>
 <div class="container mt-5">
     <h1>Welcome, John Doe</h1>  
