@@ -17,7 +17,6 @@ class Project(models.Model):
     deadline = models.DateField()
     assigned_to = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects', null=True)
     total_score = models.IntegerField(default=0)  # To store the total score of the project
-
     def __str__(self):
         return self.title
     

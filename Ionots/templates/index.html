@@ -22,39 +22,22 @@
                 <th>Project Title</th>
                 <th>Description</th>
                 <th>Status</th>
-                <th>Progress</th>
+                <th>Deadline</th>
                 <th>Action</th>
                 <th>Score</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Data Cleaning Project</td>
-                <td>Clean and preprocess a dataset using Python.</td>
-                <td>In Progress</td>
-                <td>40%</td>
-                <td><a href="/view-project/1/" class="btn btn-primary btn-sm">View Project</a></td>
-                <td>40%</td>
-
-            </tr>
-            <tr>
-                <td>Data Visualization</td>
-                <td>Create a dashboard to visualize key metrics.</td>
-                <td>Not Started</td>
-                <td>0%</td>
-                <td><a href="/view-project/2/" class="btn btn-primary btn-sm">View Project</a></td>
-                <td>40%</td>
-
-            </tr>
-            <tr>
-                <td>Machine Learning Model</td>
-                <td>Build and evaluate a predictive model.</td>
-                <td>Completed</td>
-                <td>95%</td>
-                <td><a href="/view-project/3/" class="btn btn-primary btn-sm">View Project</a></td>
-                <td>40%</td>
-
-            </tr>
+            {% for project in projects %}
+                <tr>
+                    <td>{{project.title}}</td>
+                    <td>{{ project.description|slice:":20" }}</td>
+                    <td>{{project.status}}</td>
+                    <td>{{project.deadline}}</td>
+                    <td><a href="{% url "ProjectDetail" project.id %}" class="btn btn-primary btn-sm">View Project</a></td>
+                    <td>{{project.total_score}}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

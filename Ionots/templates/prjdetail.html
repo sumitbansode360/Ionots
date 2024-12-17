@@ -1,0 +1,29 @@
+
+
+{% extends "partial/base.html" %}
+{% load static %}
+{% block title %}Ionots|Project{% endblock title %}
+{% block content %}
+    <div class="container mt-5">
+        <h1>Data Cleaning Project</h1>
+        <p><strong>Description:</strong> Clean and preprocess a dataset using Python to ensure consistency and accuracy.</p>
+        <p><strong>Deadline:</strong> 20th December 2024</p>
+        <hr>
+
+        <h3>Progress Overview:</h3>
+        <p><strong>Tasks Completed:</strong> 2 / 5</p>
+        <p><strong>Score:</strong> 40%</p>
+
+        <!-- Progress Bar -->
+        <div class="progress mb-4" style="height: 30px;">
+            <div 
+                class="progress-bar progress-bar-striped bg-info" 
+                role="progressbar" 
+                style="width: 40%;" 
+                aria-valuenow="40" 
+                aria-valuemin="0" 
+                aria-valuemax="100">
+                40%
+            </div>
+        </div>
+{% endblock content %}

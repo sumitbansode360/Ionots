@@ -3,5 +3,6 @@ from assignment.views import index
 
 urlpatterns = [
     path('', index, name="index"),
+    path('project/<id>', index, name="ProjectDetail"),
 
 ]
