@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from assignment.models import Project, Task
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -36,6 +37,8 @@ def projectDetail(request, id):
         task = get_object_or_404(Task, id=task_id, project=project)
         task.status = status
         task.save()
+        messages.success(request, f"Task status updated to {status.capitalize()}!")
+
         return redirect('ProjectDetail', id=project.id)
 
     project.calculate_total_score()
