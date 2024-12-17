@@ -47,6 +47,7 @@ def projectDetail(request, id):
         "completed_tasks": completed_tasks,
         "progress": progress,
         "score": project.total_score,
+        "total_score" : project.marks,
         "status_choices": Task._meta.get_field('status').choices,
     }
 

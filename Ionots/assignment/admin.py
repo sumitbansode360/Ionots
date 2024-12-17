@@ -10,7 +10,7 @@ class TaskInline(admin.TabularInline):  # You can use TabularInline or StackedIn
     readonly_fields = ['project']  # Read-only to show the related project
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title', 'assigned_to', 'status', 'deadline', 'date', 'total_score']
+    list_display = ['title', 'assigned_to', 'status', 'deadline', 'date', 'total_score', 'marks']
     search_fields = ['title', 'assigned_to__username', 'status']  # Search by project title, user, and status
     list_filter = ['status', 'assigned_to', 'deadline']  # Filters for easier project management
     ordering = ['-date']  # Order projects by creation date (latest first)
