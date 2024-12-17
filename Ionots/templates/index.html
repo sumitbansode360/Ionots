@@ -25,6 +25,7 @@
                 <th>Deadline</th>
                 <th>Action</th>
                 <th>Score</th>
+                <th>Total Marks</th>
             </tr>
         </thead>
         <tbody>
@@ -36,6 +37,7 @@
                     <td>{{project.deadline}}</td>
                     <td><a href="{% url "ProjectDetail" project.id %}" class="btn btn-primary btn-sm">View Project</a></td>
                     <td>{{project.total_score}}</td>
+                    <td>{{project.marks}}</td>
                 </tr>
             {% endfor %}
         </tbody>

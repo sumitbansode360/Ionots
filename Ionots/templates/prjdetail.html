@@ -3,6 +3,10 @@
 {% block title %}Ionots | Project{% endblock title %}
 
 {% block content %}
+<div class="d-flex">
+    <a href="{% url "index" %}" class="ms-auto mx-5 my-3"><button class="btn btn-warning">Go back to Home</button></a>
+</div>
+
 <div class="container mt-5">
     <h1>{{ project.title }}</h1>
     <p><strong>Description:</strong> {{ project.description }}</p>
